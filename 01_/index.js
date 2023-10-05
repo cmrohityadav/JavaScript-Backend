@@ -1,7 +1,7 @@
 // console.log("hello Rohit ")
 
 require('dotenv').config()
-const express = require('express')
+const express = require('express') //common js synchronus
 const app = express()
 const port = 3000
 
