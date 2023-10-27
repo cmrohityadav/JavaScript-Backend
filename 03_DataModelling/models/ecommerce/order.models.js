@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-
+//mini schema
 const orderItemSchema = new mongoose.Schema({
   productId: {
     type: mongoose.Schema.Types.ObjectId,
@@ -11,6 +11,8 @@ const orderItemSchema = new mongoose.Schema({
   },
 });
 
+
+//main schema
 const orderSchema = new mongoose.Schema(
   {
     orderPrice: {
@@ -31,6 +33,7 @@ const orderSchema = new mongoose.Schema(
     status: {
       type: String,
       enum: ['PENDING', 'CANCELLED', 'DELIVERED'],
+      //enum means choices
       default: 'PENDING',
     },
   },

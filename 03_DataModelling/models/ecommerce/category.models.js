@@ -11,3 +11,4 @@ const categorySchema = new mongoose.Schema(
 );
 
 export const Category = mongoose.model('Category', categorySchema);
+//  kya naam rakhna hai and kispe based rakhna hai
