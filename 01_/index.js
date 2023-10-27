@@ -19,5 +19,5 @@ app.get('/login',(bhikh,daan)=>{
 })
 
 app.listen(process.env.PORT, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`server at http://localhost:${port}`)
 })
