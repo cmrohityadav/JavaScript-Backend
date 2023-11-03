@@ -6,4 +6,6 @@
 4. - [nodemon]()
 5. npm i -D nodemon
 6. "dev":"nodemon src/index.js"
-7. 
+7. npm i -D prettier
+    .prettierrc
+8. 
