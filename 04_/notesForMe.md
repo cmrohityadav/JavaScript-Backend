@@ -8,4 +8,10 @@
 6. "dev":"nodemon src/index.js"
 7. npm i -D prettier
     .prettierrc
-8. 
+    .prettierignore
+
+
+    <!-- connection to database  -->
+8.  npm i mongoose express dotenv
+9.  database always in other continent 
+10. 
