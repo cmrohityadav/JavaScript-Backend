@@ -15,4 +15,5 @@
 8.  npm i mongoose express dotenv
 9.  database always in other continent 
 10. npm run dev
-11. 
+11.  npm  i cookie-parser cors
+12. 
