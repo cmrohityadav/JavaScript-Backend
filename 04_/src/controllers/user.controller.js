@@ -1,3 +1,4 @@
+import  Jwt from "jsonwebtoken"
 import { User } from "../models/user.model.js"
 import { ApiError } from "../utils/APIError.js"
 import { ApiResponse } from "../utils/ApiResponse.js"
@@ -64,8 +65,8 @@ const avatarLocalPath=req.files?.avatar[0]?.path;
 // const coverImageLocalPath=req.files?.coverImage[0].path;
 
 let coverImageLocalPath;
-if(req.files && Array.isArray(req.files.coverImage) && req.files.coverImage.length>0){
-    coverImageLocalPath=req.files.coverImage[0].path
+if (req.files && Array.isArray(req.files.coverImage) && req.files.coverImage.length > 0) {
+    coverImageLocalPath = req.files.coverImage[0].path
 }
 
 if(!avatarLocalPath){
@@ -182,4 +183,47 @@ const logoutUser=asyncHandler(async(req,res)=>{
     .json(new ApiResponse(200,{},"user logged out"))
 
 })
-export {registerUser,loginUser,logoutUser}
+
+
+const refreshAccessToken=asyncHandler(async(req,res)=>{
+
+    const incomingRefreshToken=req.cookies.refreshToken || req.body.refreshToken
+    if(incomingRefreshToken) throw new ApiError(401,"unathorize request")
+   
+   try {
+    const decodeToken= Jwt.verify(incomingRefreshToken,process.env.REFRESH_TOKEN_SECRET)
+ 
+   const user=await User.findById(decodeToken?._id)
+ 
+   if(!user){
+     throw new ApiError(401,"invalid refresh token")
+   }
+   if(incomingRefreshToken!==user?.refreshToken){
+     throw new ApiError(401,"refresh token is expired")
+   }
+ 
+   const options={
+     httpOnly:true,
+     secure:true,
+   }
+ 
+  const {accessToken,newRefreshToken}=await generateAccessAndRefreshTokens(user._id)
+ 
+  return res
+  .status(200)
+  .cookie("accessToken",accessToken,options)
+  .cookie("refreshToken",newRefreshToken,options)
+  .json(
+     new ApiResponse(200,
+         {accessToken,refreshToken:newRefreshToken},
+         "access token refreshed",
+         )
+  )
+   } catch (error) {
+     throw new ApiError(401,error?.message || "invalid refresh token ")
+   }
+    
+})
+
+
+export {registerUser,loginUser,logoutUser,refreshAccessToken}
