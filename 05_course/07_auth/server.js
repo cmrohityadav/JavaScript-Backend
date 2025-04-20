@@ -45,6 +45,20 @@ app.get("/decrypt",(req,res)=>{
 
 })
 
+// jsonwebtoken
+const jwt=require("jsonwebtoken")
+
+app.get("/jwtsign",(req,res)=>{
+    let token=jwt.sign({email:"r@dev.com"},"rohitsecret")
+    console.log(token)
+    res.cookie("token",token)
+    res.send(token)
+})
 
 
+app.get("/jwtverify",(req,res)=>{
+   let tokenData= jwt.verify(req.cookies.token,"rohitsecret")
+   console.log("Token Data: ",tokenData)
+   res.send("token data: ",tokenData.email)
+})
 app.listen(3000);
