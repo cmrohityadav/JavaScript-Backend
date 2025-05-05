@@ -20,6 +20,21 @@ app.get("/createUser",async(req,res)=>{
     res.send(user)
 })
 
+app.get("/post/create",async(req,res)=>{
+
+    let post=await postModel.create({
+        postData:"this is data for post",
+        user:"6817c1a0d820273746b56740",
+
+    })
+
+    let user= await userModel.findOne({_id:"6817c1a0d820273746b56740"})
+    user.post.push(post._id)
+
+   await  user.save()
+    res.send({post,user})
+})
+
 app.listen(3000,(error)=>{
     try {
         console.log(`server is running`)
