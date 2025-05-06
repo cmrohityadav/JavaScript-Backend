@@ -21,7 +21,7 @@ app.post("/register",async(req,res)=>{
     const {username,name,age,email,password}=req.body
     let user=await userTable.findOne({email})
     
-    if(!user) return res.status(401).send("User already registered")
+    if(user) return res.status(401).send("User already registered")
     
     bcrypt.genSalt(10,(error,salt)=>{
         bcrypt.hash(password,salt,async(error,hash)=>{
