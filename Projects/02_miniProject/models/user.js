@@ -7,7 +7,11 @@ const userSchema=Schema({
     name:String,
     age:Number,
     email:String,
-    password:String 
+    password:String ,
+    post:[{
+        type:Schema.Types.ObjectId,
+        ref:'post'
+    }]
 });
 
 const userTable=mongoose.model('user',userSchema);
