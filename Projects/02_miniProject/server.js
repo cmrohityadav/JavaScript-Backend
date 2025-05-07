@@ -39,7 +39,29 @@ app.post("/register",async(req,res)=>{
 
     })
 
+});
+
+
+app.post("/login",async(req,res)=>{
+
+    const {email,password}=req.body;
+    try {
+        
+        let user=await userTable.findOne({email})
+        if(!user) return res.status(400).send("Invalid Email Id")
+        
+        let isAuth=bcrypt.compare(password,user.password);
+        if(!isAuth) res.status(400).send("wrong password")
+        if(isAuth) res.status(200).send("login successful");
+        
+
+
+
+    } catch (error) {
+        console.error(error)
+    }
 })
+
 const PORT=3000;
 app.listen(PORT, () => {
     console.log(`Server listening on http://localhost:${PORT}`);
