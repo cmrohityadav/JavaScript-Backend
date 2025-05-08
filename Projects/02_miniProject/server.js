@@ -50,10 +50,14 @@ app.post("/login",async(req,res)=>{
         let user=await userTable.findOne({email})
         if(!user) return res.status(400).send("Invalid Email Id")
         
-        let isAuth=bcrypt.compare(password,user.password);
+        let isAuth=await bcrypt.compare(password,user.password);
         if(!isAuth) res.status(400).send("wrong password")
+        let token= jwt.sign({email:email,userId:user._id},"secretkey")
+        res.cookie("token",token);
         if(isAuth) res.status(200).send("login successful");
+
         
+
 
 
 
@@ -62,6 +66,31 @@ app.post("/login",async(req,res)=>{
     }
 })
 
+app.get("/logout",(req,res)=>{
+    res.clearCookie("token")
+    res.status(200).send("Logged out successfully");
+})
+
+
+// adding middleware =>> protected route
+function isLoggedIn(req,res,next){
+    if(req.cookies.token===""){
+        return res.status(400).send("u must be looged in")
+
+    }else{
+        let jwtData=jwt.verify(req.cookies.token,"secretkey")
+        req.userDefineData=jwtData;
+        req.anyData="rohit bhai"
+
+    }
+
+    next()
+}
+
+app.get("/profile",isLoggedIn,(req,res)=>{
+    console.log(req.userDefineData)
+    res.status(200).send(req.anyData)
+})
 const PORT=3000;
 app.listen(PORT, () => {
     console.log(`Server listening on http://localhost:${PORT}`);
