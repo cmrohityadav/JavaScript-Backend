@@ -1,4 +1,7 @@
 const fs =require('fs')
+const path=require('path')
+
+/*
 
 fs.writeFile("hello.txt","hello world from node",function(err){
     if(err)console.error(err)
@@ -40,4 +43,20 @@ fs.mkdir("./rohittemp",function(err){
     if(err)console.error(err)
     else console.log("create folder done")
 })
+
+*/
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+const dataFolder=path.join(__dirname,"data");
+if(!fs.existsSync(dataFolder)){
+    fs.mkdirSync(dataFolder);
+    console.log("data folder created");
+}
+
+const filePath=path.join(dataFolder,'rohitinfo.txt');
+
+// sync way of creating the file
+fs.writeFileSync(filePath,'this text data to filepath');
+console.log(`${filePath} created`);
 
