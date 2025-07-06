@@ -14,6 +14,18 @@ app.get("/create", async (req, res) => {
         email: "rohit@dev.in",
         username: "cmrohityadav"
     })
+    /**
+     * another way to create collection
+      
+      const createdUserDocumentOrRow= new userModelOrCollectionOrTable({
+      name: "rohit",
+        email: "rohit@dev.in",
+        username: "cmrohityadav"
+      })
+
+     await  createdUserDocumentOrRow.save()
+
+     */
     console.log(createdUserDocumentOrRow)
     res.send(createdUserDocumentOrRow)
 
