@@ -1,6 +1,8 @@
 const fs =require('fs')
 const path=require('path')
 
+//|||||||||| basic of file ||||||||||||||||||
+
 /*
 
 fs.writeFile("hello.txt","hello world from node",function(err){
@@ -45,18 +47,39 @@ fs.mkdir("./rohittemp",function(err){
 })
 
 */
-// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//||||||||||||||||| Using of fs and path module |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+// ||||| SYNC WAY |||||||||||||||||||||
 
-
-const dataFolder=path.join(__dirname,"data");
-if(!fs.existsSync(dataFolder)){
-    fs.mkdirSync(dataFolder);
+const dataFolderPath=path.join(__dirname,"data");
+if(!fs.existsSync(dataFolderPath)){
+    fs.mkdirSync(dataFolderPath);
     console.log("data folder created");
 }
 
-const filePath=path.join(dataFolder,'rohitinfo.txt');
+const filePath=path.join(dataFolderPath,'rohitinfo.txt');
 
 // sync way of creating the file
+
 fs.writeFileSync(filePath,'this text data to filepath');
 console.log(`${filePath} created`);
+
+
+// sync way of reading file
+
+const contentFromFileRead=fs.readFileSync(filePath);
+// it returns a Buffer (a raw binary representation of the file)
+// const contentFromFileRead = fs.readFileSync(filePath, 'utf-8');
+
+console.log("Buffer format : ",contentFromFileRead);
+console.log("String format :",contentFromFileRead.toString())
+
+
+// sync way of adding content to file (appending to last of its existing content)
+
+const appendedContentToFile=fs.appendFileSync(filePath,'\n this appended data');
+// Synchronously append data to a file, creating the file if it does not yet exist. data can be a string or a Buffer
+
+
+
+// |||||||||| ASYNC way||||||||||||||||||||||||||
 
