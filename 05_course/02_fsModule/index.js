@@ -83,3 +83,36 @@ const appendedContentToFile=fs.appendFileSync(filePath,'\n this appended data');
 
 // |||||||||| ASYNC way||||||||||||||||||||||||||
 
+const asyncFolderPath=path.join(__dirname,"asyncFolder");
+const asyncFilePath=path.join(asyncFolderPath,"asyncDemoFile.txt");
+
+fs.access(asyncFolderPath, (err) => {
+    if (err) {
+        fs.mkdir(asyncFolderPath, (err) => {
+            if (err) throw err;
+            console.log("asyncfolder created");
+        });
+    }
+});
+
+
+const writeFileReturnValue=fs.writeFile(asyncFilePath,"my data into asyncDemoFile.txt via async mehtod",(err)=>{
+    if(err) throw err;
+    console.log("Async way file is created")
+});
+
+console.log("writeFileReturnValue: ",writeFileReturnValue)
+
+const readFileReturnValue=fs.readFile(asyncFilePath,(err,data)=>{
+    if(err) throw err;
+    console.log("Data reading async way(Buffer): ",data);
+    console.log("Data reading async way(string): ",data.toString());
+})
+
+console.log("readFileReturnValue: ",readFileReturnValue)
+
+fs.appendFile(asyncFilePath,'\n new data added to async folder file via async method',(err)=>{
+    if(err) throw err;
+
+})
+
