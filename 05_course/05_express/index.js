@@ -52,6 +52,19 @@ function requestHandler(req, res) {
 app.get("/profile", requestHandler);
 
 
+//dynamic routing || params
+app.get("/profile/:kuchBhi",(req,res)=>{
+    const {kuchBhi}=req.params
+    res.send(`dynamic routing ${kuchBhi}`)
+})
+
+app.get("/profile/:username/:age",(req,res)=>{
+    const {username,age}=req.params
+    res.send(`route ${username}/${age}`)
+})
+
+
+
 //always use in last for error middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
