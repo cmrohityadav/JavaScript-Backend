@@ -31,6 +31,21 @@ app.get("/create", async (req, res) => {
 
 })
 
+app.get("/readAll",async(req,res)=>{
+    //find return always array even zero size array if not data present
+    // eg => []=anytableColl.find({username:"nouser"})
+  const userAllCollectionOrRow  =await userModelOrCollectionOrTable.find()
+
+  res.send(userAllCollectionOrRow)
+})
+
+app.get("/readOne",async(req,res)=>{
+  //it return object(1st doc/row)
+  // if not data present nothing return null
+  const userAllCollectionOrRow  =await userModelOrCollectionOrTable.findOne({username:"cmrohityadav1"})
+
+  res.send(userAllCollectionOrRow)
+})
 
 app.get("/update",async (req, res) => {
    const updatedDocOrRow=await userModelOrCollectionOrTable.findOneAndUpdate({
@@ -49,21 +64,7 @@ app.get("/update",async (req, res) => {
 })
 
 
-app.get("/readAll",async(req,res)=>{
-    //find return always array even zero size array if not data present
-    // eg => []=anytableColl.find({username:"nouser"})
-  const userAllCollectionOrRow  =await userModelOrCollectionOrTable.find()
 
-  res.send(userAllCollectionOrRow)
-})
-
-app.get("/readOne",async(req,res)=>{
-  //it return object(1st doc/row)
-  // if not data present nothing return null
-  const userAllCollectionOrRow  =await userModelOrCollectionOrTable.findOne({username:"cmrohityadav1"})
-
-  res.send(userAllCollectionOrRow)
-})
 
 app.get("/delete",async(req,res)=>{
     const deletedDocRow=await userModelOrCollectionOrTable.findOneAndDelete({username:"cmrohityadav"})
