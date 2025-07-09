@@ -21,6 +21,7 @@ const getAllBooks=async(req,res)=>{
     res.status(400).json({
             success:false,
             message:'got get all book',
+            errr:error,
             
         }) 
     }
@@ -28,7 +29,31 @@ const getAllBooks=async(req,res)=>{
 }
 
 const getSingleBookById=async(req,res)=>{
-
+    try {
+        const id=req.params.id;
+        const responseData= await BookCollection.findById(id);
+        if(!responseData){
+            res.status(200).json({
+            success:true,
+            message:'No book avaliable',
+            data:responseData,
+        }) 
+        return;
+        }
+        res.status(200).json({
+            success:true,
+            message:'get your book',
+            data:responseData,
+        }) ;
+        
+    } catch (error) {
+    console.error("Error in getSingleBookById():  ",error)
+    res.status(400).json({
+            success:false,
+            message:'Book found unsuccessfully',
+            errr:error,
+            }) 
+    }
 }
 
 const addNewBook=async(req,res)=>{
@@ -49,6 +74,7 @@ try {
     res.status(400).json({
             success:false,
             message:'Book add unsuccessfully',
+            errr:error,
             
         })
     
