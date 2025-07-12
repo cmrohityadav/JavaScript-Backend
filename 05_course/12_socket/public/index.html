@@ -4,6 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat App</title>
+      
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      height: 100vh;
+    }
+
+    #user-list {
+      width: 250px;
+      background: #fff;
+      border-right: 1px solid #ddd;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      overflow-y: auto;
+    }
+
+    #user-list h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #333;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    #user-list ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #user-list ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      color: #555;
+    }
+
+    #chat {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      overflow-y: auto;
+      margin-bottom: 80px; /* 🟢 Leave space for input form */
+    }
+
+    #chat div {
+      background: #fff;
+      margin-bottom: 10px;
+      padding: 10px 15px;
+      border-radius: 20px;
+      max-width: 80%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      word-wrap: break-word;
+    }
+
+    #message-form {
+      position: fixed;
+      bottom: 20px;
+      left: 270px;
+      right: 20px;
+      display: flex;
+      background: #fff;
+      padding: 10px 15px;
+      border-radius: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    #message-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 30px;
+    }
+
+    #message-form button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-left: 10px;
+      transition: background 0.3s;
+    }
+
+    #message-form button:hover {
+      background: #0056b3;
+    }
+
+    /* ✅ Mobile responsive tweaks */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      #user-list {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        box-shadow: none;
+      }
+
+      #chat {
+        flex: 1;
+        padding: 10px;
+        margin-bottom: 80px; /* 🟢 Same as input height */
+      }
+
+      #message-form {
+        position: fixed;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        border-radius: 30px;
+      }
+    }
+  </style>
 </head>
 <body>
     <div id="user-list">
