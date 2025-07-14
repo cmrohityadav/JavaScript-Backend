@@ -29,6 +29,16 @@ type Query{
     product(id:ID!):Product
 }
 
+type Mutation{
+    createProduct(
+        title:String! 
+        category:String! 
+        price:Float! 
+        inStock: Boolean! 
+        
+    ):Product
+}
+
 `;
 
 export {typeDefs}
