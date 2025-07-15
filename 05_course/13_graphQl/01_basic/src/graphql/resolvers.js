@@ -17,6 +17,26 @@ const resolvers={
 
             products.push(newlyCreatedProduct);
             return newlyCreatedProduct;
+        },
+        deleteProduct:(_,{id})=>{
+            const index=products.findIndex(item=>item.id==id);
+            if(index==-1) return false;
+            products.splice(index,1);
+
+            return true;
+        },
+        updateProduct:(_,{id,...updates})=>{
+            const index=products.findIndex(item=>item.id==id);
+            if(index==-1) return null;
+
+            const updatedProduct={
+                ...products[index],...updates
+            }
+
+            products[index]=updatedProduct;
+
+            return updatedProduct;
+
         }
     }
 };
