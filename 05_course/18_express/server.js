@@ -8,6 +8,7 @@ const { requestLogger, addTimeStamp } = require('./middleware/customMiddleware')
 const { globalErrorHandler } = require('./middleware/errorHandler');
 const {urlVersioning}=require('./middleware/apiVersioning');
 const { createBasicRateLimit } = require('./middleware/rateLimiting');
+const itemRouter = require('./routes/itemRoutes');
 
 // express  middleware
 
@@ -18,7 +19,10 @@ app.use(configureCors());
 app.use(createBasicRateLimit(100,15*60*1000));
 app.use(express.json());
 
-app.use('/api/v1',urlVersioning('v1'))
+app.use(urlVersioning('v1'))
+
+app.use('/api/v1',itemRouter);
+
 
 app.use(globalErrorHandler);
 app.listen(PORT,(error)=>{
