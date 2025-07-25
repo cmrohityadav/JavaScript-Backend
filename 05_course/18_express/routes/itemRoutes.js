@@ -1,5 +1,5 @@
 const express =require('express');
-const { aysncHandler } = require('../middleware/errorHandler');
+const { aysncHandler, APIError } = require('../middleware/errorHandler');
 
 const itemRouter=express.Router();
 const item=[
@@ -11,6 +11,26 @@ const item=[
 ]
 itemRouter.get('/items',aysncHandler(async(req,res)=>{
     res.json(item)
+}))
+
+
+itemRouter.post('/items',aysncHandler(async(req,res)=>{
+  if(!req.body.name){
+    throw new APIError("Provide item name",400);
+  }
+
+  const newItem={
+    id:item.length+1,
+    name:req.body.name,
+  }
+
+  item.push(newItem);
+
+  return res.status(200).json({
+    item:newItem,
+    message:'item added'
+  });
+
 }))
 
 
