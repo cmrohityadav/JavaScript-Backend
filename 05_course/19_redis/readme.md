@@ -36,3 +36,16 @@ https://github.com/tporadowski/redis/releases
 
 
 
+## Data Structure
+### Strings
+ — SET, GET, MSET, MGET
+
+### Lists — LPUSH, RPUSH, LRANGE, LPOP, RPOP
+- LPUSH → push left (head).
+
+- RPUSH → push right (tail).
+
+- LRANGE → slice list, like an array.
+
+- LPOP/RPOP → remove head/tail.
+
