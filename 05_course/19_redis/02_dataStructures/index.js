@@ -45,6 +45,27 @@ async function redisDataStructure(){
         const updatedNotes = await client.lRange('notes', 0, -1);
         console.log(`extract Notes List AFTER pops: ${updatedNotes}`);
 
+
+
+
+
+        // SETS -> SADD,SMEMBERS,SISMEMBER,SREM
+
+        await client.sAdd("user:nickname",["rahul","yadav","yaduvansi","removeMe"]);
+        const extractedUserNickNameSet= await client.sMembers("user:nickname");
+        console.log(`Extracted set for nickname: ${extractedUserNickNameSet}`)
+
+        const isYadavPresent=await client.sIsMember("user:nickname","yadav");
+        console.log(`isYadavPresent : ${isYadavPresent}`);
+
+        const removedSetitem=await client.sRem('user:nickname',['removeMe','yaduvansi']);
+        console.log(`removed set item : ${removedSetitem}`);
+
+
+
+        // SORTED SETS -> ZADD,ZRANGE,ZRANK,ZREM
+
+
         
 
     } catch (error) {
