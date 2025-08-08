@@ -1,4 +1,4 @@
 
-const dbName='';
+const dbName='socialMediaMicroserviceIdentity';
 
 module.exports={dbName}
