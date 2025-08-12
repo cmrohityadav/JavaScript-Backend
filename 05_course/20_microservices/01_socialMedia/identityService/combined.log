@@ -123,3 +123,18 @@
 {"level":"info","message":"Request body , [object Object]","service":"identity-service","timestamp":"2025-08-11T16:41:21.523Z"}
 {"level":"info","message":"Registration endpoint hit...","service":"identity-service","timestamp":"2025-08-11T16:41:21.527Z"}
 {"level":"warn","message":"User already exists","service":"identity-service","timestamp":"2025-08-11T16:41:21.545Z"}
+{"level":"info","message":"Identity service running on Port 3001","service":"identity-service","timestamp":"2025-08-11T17:24:42.143Z"}
+{"level":"info","message":"Mongodb connected !! DB Host : localhost","service":"identity-service","timestamp":"2025-08-11T17:24:42.187Z"}
+{"level":"info","message":"connected to mongodb","service":"identity-service","timestamp":"2025-08-11T17:24:42.188Z"}
+{"level":"info","message":"Identity service running on Port 3001","service":"identity-service","timestamp":"2025-08-12T17:03:50.911Z"}
+{"level":"info","message":"Mongodb connected !! DB Host : localhost","service":"identity-service","timestamp":"2025-08-12T17:03:50.959Z"}
+{"level":"info","message":"connected to mongodb","service":"identity-service","timestamp":"2025-08-12T17:03:50.961Z"}
+{"level":"info","message":"Received GET request to /api/auth/login","service":"identity-service","timestamp":"2025-08-12T17:05:06.674Z"}
+{"level":"info","message":"Request body , [object Object]","service":"identity-service","timestamp":"2025-08-12T17:05:06.675Z"}
+{"level":"info","message":"Received POST request to /api/auth/login","service":"identity-service","timestamp":"2025-08-12T17:05:41.265Z"}
+{"level":"info","message":"Request body , [object Object]","service":"identity-service","timestamp":"2025-08-12T17:05:41.266Z"}
+{"level":"info","message":"Login enpoint hit...","service":"identity-service","timestamp":"2025-08-12T17:05:41.269Z"}
+{"0":"\"","1":"e","10":" ","11":"r","12":"e","13":"q","14":"u","15":"i","16":"r","17":"e","18":"d","2":"m","3":"a","4":"i","5":"l","6":"\"","7":" ","8":"i","9":"s","level":"warn","message":"Validation error","service":"identity-service","timestamp":"2025-08-12T17:05:41.283Z"}
+{"level":"info","message":"Received POST request to /api/auth/login","service":"identity-service","timestamp":"2025-08-12T17:07:34.242Z"}
+{"level":"info","message":"Request body , [object Object]","service":"identity-service","timestamp":"2025-08-12T17:07:34.244Z"}
+{"level":"info","message":"Login enpoint hit...","service":"identity-service","timestamp":"2025-08-12T17:07:34.246Z"}
