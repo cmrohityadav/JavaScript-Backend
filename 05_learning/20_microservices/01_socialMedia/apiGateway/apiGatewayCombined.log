@@ -103,3 +103,18 @@
 {"level":"info","message":"Received POST request to /v1/auth/login","service":"apiGateway","timestamp":"2025-08-12T17:07:34.235Z"}
 {"level":"info","message":"Request body, [object Object]","service":"apiGateway","timestamp":"2025-08-12T17:07:34.236Z"}
 {"level":"info","message":"Response recieved from Identity service : 200","service":"apiGateway","timestamp":"2025-08-12T17:07:34.495Z"}
+{"level":"info","message":"API Gateway is running on port 3000","service":"apiGateway","timestamp":"2025-08-14T16:03:58.621Z"}
+{"level":"info","message":"identity Service is running on http://localhost:3001","service":"apiGateway","timestamp":"2025-08-14T16:03:58.627Z"}
+{"level":"info","message":"Redis Url redis://localhost:6379","service":"apiGateway","timestamp":"2025-08-14T16:03:58.628Z"}
+{"level":"info","message":"Received POST request to /v1/auth/login","service":"apiGateway","timestamp":"2025-08-14T16:06:02.382Z"}
+{"level":"info","message":"Request body, [object Object]","service":"apiGateway","timestamp":"2025-08-14T16:06:02.386Z"}
+{"level":"info","message":"Response recieved from Identity service : 200","service":"apiGateway","timestamp":"2025-08-14T16:06:02.680Z"}
+{"level":"info","message":"Received POST request to /v1/auth/login","service":"apiGateway","timestamp":"2025-08-14T16:06:26.996Z"}
+{"level":"info","message":"Request body, [object Object]","service":"apiGateway","timestamp":"2025-08-14T16:06:26.997Z"}
+{"level":"info","message":"Response recieved from Identity service : 400","service":"apiGateway","timestamp":"2025-08-14T16:06:27.135Z"}
+{"level":"info","message":"Received POST request to /v1/auth/login","service":"apiGateway","timestamp":"2025-08-14T16:06:41.143Z"}
+{"level":"info","message":"Request body, [object Object]","service":"apiGateway","timestamp":"2025-08-14T16:06:41.144Z"}
+{"level":"info","message":"Response recieved from Identity service : 400","service":"apiGateway","timestamp":"2025-08-14T16:06:41.162Z"}
+{"level":"info","message":"Received POST request to /v1/auth/login","service":"apiGateway","timestamp":"2025-08-14T16:06:53.074Z"}
+{"level":"info","message":"Request body, [object Object]","service":"apiGateway","timestamp":"2025-08-14T16:06:53.075Z"}
+{"level":"info","message":"Response recieved from Identity service : 200","service":"apiGateway","timestamp":"2025-08-14T16:06:53.327Z"}

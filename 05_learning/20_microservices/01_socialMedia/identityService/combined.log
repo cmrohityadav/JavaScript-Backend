@@ -138,3 +138,20 @@
 {"level":"info","message":"Received POST request to /api/auth/login","service":"identity-service","timestamp":"2025-08-12T17:07:34.242Z"}
 {"level":"info","message":"Request body , [object Object]","service":"identity-service","timestamp":"2025-08-12T17:07:34.244Z"}
 {"level":"info","message":"Login enpoint hit...","service":"identity-service","timestamp":"2025-08-12T17:07:34.246Z"}
+{"level":"info","message":"Identity service running on Port 3001","service":"identity-service","timestamp":"2025-08-14T16:03:44.958Z"}
+{"level":"info","message":"Mongodb connected !! DB Host : localhost","service":"identity-service","timestamp":"2025-08-14T16:03:45.017Z"}
+{"level":"info","message":"connected to mongodb","service":"identity-service","timestamp":"2025-08-14T16:03:45.019Z"}
+{"level":"info","message":"Received POST request to /api/auth/login","service":"identity-service","timestamp":"2025-08-14T16:06:02.463Z"}
+{"level":"info","message":"Request body , [object Object]","service":"identity-service","timestamp":"2025-08-14T16:06:02.464Z"}
+{"level":"info","message":"Login enpoint hit...","service":"identity-service","timestamp":"2025-08-14T16:06:02.495Z"}
+{"level":"info","message":"Received POST request to /api/auth/login","service":"identity-service","timestamp":"2025-08-14T16:06:27.001Z"}
+{"level":"info","message":"Request body , [object Object]","service":"identity-service","timestamp":"2025-08-14T16:06:27.003Z"}
+{"level":"info","message":"Login enpoint hit...","service":"identity-service","timestamp":"2025-08-14T16:06:27.005Z"}
+{"level":"warn","message":"Invalid Password","service":"identity-service","timestamp":"2025-08-14T16:06:27.131Z"}
+{"level":"info","message":"Received POST request to /api/auth/login","service":"identity-service","timestamp":"2025-08-14T16:06:41.149Z"}
+{"level":"info","message":"Request body , [object Object]","service":"identity-service","timestamp":"2025-08-14T16:06:41.150Z"}
+{"level":"info","message":"Login enpoint hit...","service":"identity-service","timestamp":"2025-08-14T16:06:41.153Z"}
+{"level":"warn","message":"Invalid user","service":"identity-service","timestamp":"2025-08-14T16:06:41.158Z"}
+{"level":"info","message":"Received POST request to /api/auth/login","service":"identity-service","timestamp":"2025-08-14T16:06:53.080Z"}
+{"level":"info","message":"Request body , [object Object]","service":"identity-service","timestamp":"2025-08-14T16:06:53.081Z"}
+{"level":"info","message":"Login enpoint hit...","service":"identity-service","timestamp":"2025-08-14T16:06:53.083Z"}
