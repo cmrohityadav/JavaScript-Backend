@@ -11,3 +11,4 @@ Projects/01_AuthWithExpress/.env
 * .env
 05_course/18_express/.env
 05_course/20_microservices/01_socialMedia/identityService/.env
+05_learning/20_microservices/01_socialMedia/postService/.env
