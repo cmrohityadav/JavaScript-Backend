@@ -9,6 +9,7 @@ const logger=require('./utils/logger')
 const app=express();
 const proxy=require('express-http-proxy');
 const errorHandler = require('./middleware/errorHandler');
+const { validateToken } = require('./middleware/authMiddleware');
 
 const PORT=process.env.PORT || 3000;
 
@@ -83,11 +84,37 @@ app.use('/v1/auth',proxy(process.env.IDENTITY_SERVICE_URL,{
  * 
  */
 
+
+
+// setting up proxy for our post service
+
+app.use('/v1/posts',validateToken,
+    proxy(
+        process.env.POST_SERVICE_URL,
+        {
+            ...proxyOptions,
+            proxyReqOptDecorator:(proxyReqOpts,srcReq)=>{
+                proxyReqOpts.headers['Content-Type']='application/json';
+                proxyReqOpts.headers['x-user-id']=srcReq.user.userId;
+
+                return proxyReqOpts;
+            },
+            userResDecorator:(proxyRes,proxyResData,userReq,userRes)=>{
+                logger.info(`Response recieved from Post Service : ${proxyRes.statusCode}`);
+
+                return proxyResData;
+            }
+        }
+    )
+);
+
+
 app.use(errorHandler);
 
 app.listen(PORT,()=>{
     logger.info(`API Gateway is running on port ${PORT}`);
     logger.info(`identity Service is running on ${process.env.IDENTITY_SERVICE_URL}`);
+    logger.info(`Post Service is running on ${process.env.POST_SERVICE_URL}`);
     logger.info(`Redis Url ${process.env.REDIS_URL}`);
 })
 

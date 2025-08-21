@@ -32,5 +32,21 @@ app.use((req,res,next)=>{
     next();
 });
 
+// for improvement i have to implement rate limiting here
+
+// routes -> pass redisClient to routes
+app.use('/api/posts',(req,res,next)=>{
+    req.redisClient=redisClient;
+},postRoutes);
 
 
+app.use(errorHandler);
+
+app.listen(PORT,()=>{
+    logger.info(`post service running on port ${PORT}`);
+});
+
+
+process.on("unhandledRejection",(reason,promise)=>{
+    logger.error("Unhandled Rejection at",promise,"reason:",reason);
+});
