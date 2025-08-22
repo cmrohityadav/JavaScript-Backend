@@ -1,3 +1,31 @@
 {"level":"info","message":"post service running on port 3002","service":"post-service","timestamp":"2025-08-20T16:37:02.728Z"}
 {"level":"info","message":"Mongodb connected !! DB Host : localhost","service":"identity-service","timestamp":"2025-08-20T16:37:02.780Z"}
 {"level":"info","message":"connected to mongodb","service":"post-service","timestamp":"2025-08-20T16:37:02.785Z"}
+{"level":"info","message":"post service running on port 3002","service":"post-service","timestamp":"2025-08-22T16:07:26.030Z"}
+{"level":"info","message":"Mongodb connected !! DB Host : localhost","service":"identity-service","timestamp":"2025-08-22T16:07:26.078Z"}
+{"level":"info","message":"connected to mongodb","service":"post-service","timestamp":"2025-08-22T16:07:26.083Z"}
+{"level":"info","message":"Received POST request to /api/posts/createpost","service":"post-service","timestamp":"2025-08-22T16:34:43.364Z"}
+{"level":"info","message":"Request body , [object Object]","service":"post-service","timestamp":"2025-08-22T16:34:43.366Z"}
+{"level":"info","message":"Received POST request to /api/posts/createpost","service":"post-service","timestamp":"2025-08-22T16:58:57.877Z"}
+{"level":"info","message":"Request body , [object Object]","service":"post-service","timestamp":"2025-08-22T16:58:57.878Z"}
+{"level":"info","message":"Received POST request to /api/posts/createpost","service":"post-service","timestamp":"2025-08-22T16:59:17.502Z"}
+{"level":"info","message":"Request body , undefined","service":"post-service","timestamp":"2025-08-22T16:59:17.502Z"}
+{"level":"info","message":"post service running on port 3002","service":"post-service","timestamp":"2025-08-22T17:00:51.226Z"}
+{"level":"info","message":"Mongodb connected !! DB Host : localhost","service":"post-service","timestamp":"2025-08-22T17:00:51.253Z"}
+{"level":"info","message":"connected to mongodb","service":"post-service","timestamp":"2025-08-22T17:00:51.254Z"}
+{"level":"info","message":"Received POST request to /api/posts/createpost","service":"post-service","timestamp":"2025-08-22T17:00:57.241Z"}
+{"level":"info","message":"Request body , [object Object]","service":"post-service","timestamp":"2025-08-22T17:00:57.241Z"}
+{"level":"info","message":"Received POST request to /api/posts/createpost","service":"post-service","timestamp":"2025-08-22T17:04:27.159Z"}
+{"level":"info","message":"Request body , [object Object]","service":"post-service","timestamp":"2025-08-22T17:04:27.160Z"}
+{"level":"info","message":"post service running on port 3002","service":"post-service","timestamp":"2025-08-22T17:09:35.298Z"}
+{"level":"info","message":"Mongodb connected !! DB Host : localhost","service":"post-service","timestamp":"2025-08-22T17:09:35.320Z"}
+{"level":"info","message":"connected to mongodb","service":"post-service","timestamp":"2025-08-22T17:09:35.321Z"}
+{"level":"info","message":"post service running on port 3002","service":"post-service","timestamp":"2025-08-22T17:09:36.872Z"}
+{"level":"info","message":"Mongodb connected !! DB Host : localhost","service":"post-service","timestamp":"2025-08-22T17:09:36.896Z"}
+{"level":"info","message":"connected to mongodb","service":"post-service","timestamp":"2025-08-22T17:09:36.897Z"}
+{"level":"info","message":"Received POST request to /api/posts/createpost","service":"post-service","timestamp":"2025-08-22T17:09:41.904Z"}
+{"level":"info","message":"Request body , [object Object]","service":"post-service","timestamp":"2025-08-22T17:09:41.905Z"}
+{"_message":"Post validation failed","errors":{"content":{"kind":"required","message":"Path `content` is required.","name":"ValidatorError","path":"content","properties":{"message":"Path `content` is required.","path":"content","type":"required"}}},"level":"error","message":"Error while creating post Post validation failed: content: Path `content` is required.","service":"post-service","stack":"ValidationError: Post validation failed: content: Path `content` is required.\n    at Document.invalidate (D:\\JavaScript-Backend\\05_learning\\20_microservices\\01_socialMedia\\postService\\node_modules\\mongoose\\lib\\document.js:3358:32)\n    at D:\\JavaScript-Backend\\05_learning\\20_microservices\\01_socialMedia\\postService\\node_modules\\mongoose\\lib\\document.js:3119:17\n    at D:\\JavaScript-Backend\\05_learning\\20_microservices\\01_socialMedia\\postService\\node_modules\\mongoose\\lib\\schemaType.js:1410:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)","timestamp":"2025-08-22T17:09:41.913Z"}
+{"level":"info","message":"Received POST request to /api/posts/createpost","service":"post-service","timestamp":"2025-08-22T17:09:49.420Z"}
+{"level":"info","message":"Request body , [object Object]","service":"post-service","timestamp":"2025-08-22T17:09:49.421Z"}
+{"_message":"Post validation failed","errors":{"content":{"kind":"required","message":"Path `content` is required.","name":"ValidatorError","path":"content","properties":{"message":"Path `content` is required.","path":"content","type":"required"}}},"level":"error","message":"Error while creating post Post validation failed: content: Path `content` is required.","service":"post-service","stack":"ValidationError: Post validation failed: content: Path `content` is required.\n    at Document.invalidate (D:\\JavaScript-Backend\\05_learning\\20_microservices\\01_socialMedia\\postService\\node_modules\\mongoose\\lib\\document.js:3358:32)\n    at D:\\JavaScript-Backend\\05_learning\\20_microservices\\01_socialMedia\\postService\\node_modules\\mongoose\\lib\\document.js:3119:17\n    at D:\\JavaScript-Backend\\05_learning\\20_microservices\\01_socialMedia\\postService\\node_modules\\mongoose\\lib\\schemaType.js:1410:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)","timestamp":"2025-08-22T17:09:49.422Z"}

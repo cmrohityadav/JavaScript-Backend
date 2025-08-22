@@ -7,7 +7,7 @@ const helmet=require('helmet');
 const postRoutes=require('./routes/postRoutes');
 const errorHandler=require('./middlewares/errorHandler');
 const logger=require('./utils/logger');
-const connectDb = require('../../identityService/src/database/dbConnect');
+const connectDb = require('./database/dbConnect');
 
 const app=express();
 const PORT=process.env.PORT || 3002;
@@ -37,6 +37,7 @@ app.use((req,res,next)=>{
 // routes -> pass redisClient to routes
 app.use('/api/posts',(req,res,next)=>{
     req.redisClient=redisClient;
+    next()
 },postRoutes);
 
 
