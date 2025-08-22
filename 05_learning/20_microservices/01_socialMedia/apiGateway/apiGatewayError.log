@@ -7,3 +7,6 @@
 {"level":"error","message":"Proxy error: Cannot set properties of undefined (setting 'Content-Type')","service":"apiGateway","timestamp":"2025-08-11T16:36:33.426Z"}
 {"level":"error","message":"Proxy error: ","service":"apiGateway","timestamp":"2025-08-22T16:23:10.701Z"}
 {"level":"error","message":"Proxy error: read ECONNRESET","service":"apiGateway","timestamp":"2025-08-22T17:00:33.344Z"}
+{"level":"error","message":"Proxy error: read ECONNRESET","service":"apiGateway","timestamp":"2025-08-22T17:09:34.568Z"}
+{"level":"error","message":"Proxy error: read ECONNRESET","service":"apiGateway","timestamp":"2025-08-22T17:09:34.569Z"}
+{"level":"error","message":"Proxy error: Cannot read properties of undefined (reading 'userId')","service":"apiGateway","timestamp":"2025-08-22T17:37:39.487Z"}

@@ -23,10 +23,10 @@ const validateToken=(req,res,next)=>{
         }
         req.user=user
 
-
+        next();
     });
 
-    next();
+ 
 
 }
 
