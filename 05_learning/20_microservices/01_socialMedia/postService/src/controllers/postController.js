@@ -40,6 +40,16 @@ const createPost=async(req,res)=>{
 
 const getAllPosts=async(req,res)=>{
     try {
+        const page=parseInt(req.query.page) || 1;
+        const limit=parseInt(req.query.limit) || 10;
+        const startIndex=(page-1) * limit;
+
+        const cacheKey=`posts:${page}:${limit}`;
+        const cachedPosts= await req.redisClient.get(cacheKey);
+
+        if(cachedPosts){
+            return res.json(JSON.parse(cachedPosts));
+        }
         
     } catch (error) {
         logger.error("Error while get All Posts",error);
