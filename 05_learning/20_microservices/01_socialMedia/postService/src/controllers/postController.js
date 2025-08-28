@@ -50,6 +50,25 @@ const getAllPosts=async(req,res)=>{
         if(cachedPosts){
             return res.json(JSON.parse(cachedPosts));
         }
+
+        const posts=await Post.find({}).sort({createdAt:-1})
+        .skip(startIndex)
+        .limit(limit);
+
+        const totalNoOfPosts= await Post.countDocuments();
+
+        const result={
+            posts,
+            currentPage:page,
+            totalPages:Math.ceil(totalNoOfPosts/limit),
+            totalPosts:totalNoOfPosts,
+
+        }
+
+        //save your post in redis cache
+        await req.redisClient.setex(cacheKey,300,JSON.stringify(result));
+
+        res.json(result);
         
     } catch (error) {
         logger.error("Error while get All Posts",error);
@@ -85,4 +104,4 @@ const deletePost=async(req,res)=>{
     }
 }
 
-module.exports={createPost};
+module.exports={createPost,getAllPosts};
