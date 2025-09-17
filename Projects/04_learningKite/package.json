@@ -1,0 +1,18 @@
+{
+  "name": "04_learningkite",
+  "version": "1.0.0",
+  "description": "learning kite api",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "inquirer": "^12.9.6"
+  }
+}
